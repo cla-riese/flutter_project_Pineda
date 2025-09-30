@@ -1,0 +1,22 @@
+import 'package:flutter/material.dart';
+
+class Createpost extends StatelessWidget {
+  final VoidCallback? onpostcreate;
+  const Createpost({super.key, this.onpostcreate});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: CircleAvatar(
+      backgroundImage: AssetImage("assets/profile/prof3.jpg"),
+      ),
+      title: TextField(
+        decoration: const InputDecoration(
+          hintText: "What's on your mind?",
+          border: InputBorder.none,
+        ),
+      ),
+        trailing: const Icon(Icons.image),
+      );
+  }
+}
