@@ -1,5 +1,6 @@
 import 'package:facebook/model/story_model.dart';
 import 'package:facebook/widgets/createpost.dart';
+import 'package:facebook/widgets/newsfeed_post.dart';
 import 'package:facebook/widgets/storieslist.dart';
 import 'package:flutter/material.dart';
 
@@ -68,15 +69,28 @@ class _NewsFeedState extends State<NewsFeed> {
           DrawerButton(),
         ],
       ),
-      body: Column(
-        children: [
-          Createpost(),
-          StoriesList(
-            stories: stories,
-            onStoryTap: (story) {},
-            )
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Createpost(),
+            StoriesList(
+              stories: stories,
+              onStoryTap: (story) {},
+              ),
+            NewsFeedPost(),
+            NewsFeedPost(
+              name: "Yae Miko",
+              caption: "Having a blast with Ei!",
+              imageurl: "assets/profile/prof3.jpg"),
         
-        ],
+            NewsFeedPost(
+              name: "Raiden Shogun",
+              caption: "Having a blast with you!",
+              imageurl: "assets/profile/prof1.jpg",),
+        
+          
+          ],
+        ),
       ),
     );
   }
